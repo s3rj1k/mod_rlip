@@ -1,0 +1,17 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_auto_clean:
+	rm -rf *~ *.o *.so *.lo *.la *.slo *.loT .libs/
+
+override_dh_auto_build:
+	LTFLAGS="--no-silent" apxs2 \
+		  -S CFLAGS="$(CFLAGS) \
+		  -D_LARGEFILE64_SOURCE \
+		  $(CPPFLAGS)" -c -o mod_rlip.so mod_rlip.c
+
+override_dh_auto_test:
+
+override_dh_auto_install:

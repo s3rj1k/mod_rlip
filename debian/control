@@ -1,0 +1,14 @@
+Source: libapache2-mod-rlip
+Maintainer: s3rj1k <evasive.gyron@gmail.com>
+Section: httpd
+Priority: extra
+Standards-Version: 3.9.6
+Build-Depends: debhelper (>= 9), dh-apache2, apache2-dev (>= 2.4.2-1~)
+
+Package: libapache2-mod-rlip
+Architecture: any
+Depends: apache2-api-20120211, apache2-mpm-prefork, ${libapache2-mod-ssl-stub:Depends}, ${shlibs:Depends}, ${misc:Depends}
+Description: module for Apache2.4 module that fixes
+ SERVER_ADDR, REMOTE_ADDR then web server is used as backend,
+ behind reverse-proxy, the values must be provided by an
+ upstream reverse proxy via X-Server-IP, X-Real-IP request headers.

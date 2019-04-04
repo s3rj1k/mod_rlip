@@ -1,0 +1,11 @@
+libapache2-mod-rlip for Debian
+-----------------------------
+
+  Configuration:
+
+    Apache2.4 module that fixes SERVER_ADDR, REMOTE_ADDR
+    then web server is used as backend, behind reverse-proxy,
+    the values must be provided by an upstream reverse proxy
+    via X-Server-IP, X-Real-IP request headers.
+
+ -- s3rj1k <evasive.gyron@gmail.com>  Fri, 05 Apr 2019 01:25:05 +0200
