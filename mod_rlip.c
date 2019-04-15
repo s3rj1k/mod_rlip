@@ -43,11 +43,21 @@ static int common_vars_override(request_rec *r) {
 		r->useragent_ip = (char *)xRealIP;
 	}
 
+	apr_status_t rv;
+	apr_sockaddr_t *addr;
+
+	rv = apr_sockaddr_info_get(&addr,  (char *)xRealIP,
+		APR_UNSPEC, addr->port,
+		0, r->pool);
+	if (rv == APR_SUCCESS) {
+		r->useragent_addr = addr;
+	}
+
 	return DECLINED;
 }
 
 static void register_hooks(apr_pool_t *p) {
-	ap_hook_post_read_request(common_vars_override, NULL, NULL, APR_HOOK_REALLY_FIRST);
+	ap_hook_post_read_request(common_vars_override, NULL, NULL, APR_HOOK_REALLY_FIRST - 10);
 }
 
 module AP_MODULE_DECLARE_DATA rlip_module = {
