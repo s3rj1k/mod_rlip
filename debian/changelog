@@ -1,4 +1,4 @@
-libapache2-mod-rlip (2019.04.15+deb8u1) stable; urgency=low
+libapache2-mod-rlip (2019.04.15+deb8u2) stable; urgency=low
 
   * fix IP ACLs with mod_access_compat.c and friends.
 

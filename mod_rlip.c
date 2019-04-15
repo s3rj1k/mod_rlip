@@ -47,7 +47,7 @@ static int common_vars_override(request_rec *r) {
 	apr_sockaddr_t *addr;
 
 	rv = apr_sockaddr_info_get(&addr,  (char *)xRealIP,
-		APR_UNSPEC, addr->port,
+		APR_UNSPEC, 0,
 		0, r->pool);
 	if (rv == APR_SUCCESS) {
 		r->useragent_addr = addr;
