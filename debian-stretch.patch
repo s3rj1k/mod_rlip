@@ -1,0 +1,17 @@
+diff --git a/debian/changelog b/debian/changelog
+index b0506c2..6906e10 100644
+--- a/debian/changelog
++++ b/debian/changelog
+@@ -1,10 +1,10 @@
+-libapache2-mod-rlip (2019.04.15+deb8u2) stable; urgency=low
++libapache2-mod-rlip (2019.04.15+deb9u2) stretch; urgency=low
+ 
+   * fix IP ACLs with mod_access_compat.c and friends.
+ 
+  -- s3rj1k <evasive.gyron@gmail.com>  Mon, 15 Apr 2019 20:00:00 +0200
+ 
+-libapache2-mod-rlip (2019.04.05+deb8u1) stable; urgency=low
++libapache2-mod-rlip (2019.04.05+deb9u1) stretch; urgency=low
+ 
+   * Initial release.
+ 
